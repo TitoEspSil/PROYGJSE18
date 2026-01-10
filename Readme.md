@@ -12,6 +12,4 @@ Necesita
 . Un router que decide que vista a renderizar según un nombre/ruta
 . Vistas separadas en módulos para que el proyecto crezca sin volverse caos  
 
-
-
  Usamos module en los scripts cuando necesitamos importar y exportar 
