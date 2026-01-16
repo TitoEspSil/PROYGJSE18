@@ -1,8 +1,9 @@
 import { Router } from "./router.js";
+import { initProducts } from "./services/products.service.js";
 
 const app= document.getElementById("app")
 const router = new Router(app)
-
+initProducts()
 //todo  funcion para marcar activo en el sidebar
 function setActive(page) { //dashboard
     document.querySelectorAll(".menu-item").forEach((btn)=>{

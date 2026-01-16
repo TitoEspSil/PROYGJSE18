@@ -4,3 +4,4 @@ export const productsSeed = [
     { id: "p-003", name :"Monitor 24' '", category: "Pantallas", price: 1200, stock:6, sold:18, active:true},
     { id: "p-004", name :"SSD 1TB", category: "Almacenamiento", price: 650, stock:9, sold:40, active:true},
 ]
+// ["Todos","Periféricos","Pantallas", "Almacenaminto"]
