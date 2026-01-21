@@ -8,6 +8,7 @@ import {
     addProduct, 
     getProductById, 
     updateProduct,
+    addSale,
  } from "../services/products.service.js"
 
 export function renderProductsPage(root) {
@@ -152,10 +153,10 @@ export function renderProductsPage(root) {
                         <td>${p.price}</td>
                         <td>${p.stock}</td>
                         <td>${p.sold ?? 0}</td>
-                        <td>
+                        <td style = "display:flex; gap:8px ;justify-content: center;">
+                        <button class="btnSale" data-id="${p.id}" style="cursor: pointer;">+1 venta</button>
                         <button class="btnEdit" data-id="${p.id}" style="cursor: pointer;">Editar</button>
-                            <button class="btnDelete" data-id="${p.id}" style="cursor: pointer;">Eliminar</button>
-
+                        <button class="btnDelete" data-id="${p.id}" style="cursor: pointer;">Eliminar</button>
                         </td>
                     </tr>
                     `
@@ -163,6 +164,20 @@ export function renderProductsPage(root) {
             </tbody>
     </table>
         `;
+        // +1 venta
+        root.querySelectorAll(".btnSale").forEach((btn)=>{
+            btn.addEventListener("click",()=>{
+                clearMessage();
+                const id = btn.dataset.id;
+                const updated = addSale(id)
+                if(!updated){
+                    setMessage("No se pudo registrar la venta", true)
+                    return
+                }
+                setMessage("Venta registrada 👌")
+                draw(select.value)
+            })
+        })
         // Editar
         root.querySelectorAll(".btnEdit").forEach((btn)=>{
                btn.addEventListener("click",()=>{
