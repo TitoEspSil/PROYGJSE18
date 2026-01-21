@@ -20,3 +20,4 @@ document.querySelectorAll(".menu-item").forEach(btn=>{
         })
 })
 router.navigate("dashboard")
+setActive("dashboard")

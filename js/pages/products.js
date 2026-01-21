@@ -1,4 +1,14 @@
-import { getCategories, filterByCategory, getAllProducts, deleteProduct, isDuplicateName, generateProductId, addProduct, getProductById, updateProduct } from "../services/products.service.js"
+import { 
+    getCategories,
+    filterByCategory,
+    getAllProducts, 
+    deleteProduct, 
+    isDuplicateName, 
+    generateProductId, 
+    addProduct, 
+    getProductById, 
+    updateProduct,
+ } from "../services/products.service.js"
 
 export function renderProductsPage(root) {
     const categories = getCategories()
@@ -174,6 +184,10 @@ export function renderProductsPage(root) {
                 const id= btn.dataset.id;
                 const ok=confirm("Seguro que deseas eliminar este producto?")
                 if (!ok) return
+
+                //si estamos editando el mismo, cancela edicion
+                if(editingId === id) setFormModeAdd()
+
                 const removed = deleteProduct(id)
                 if (removed) {
                     setMessage("Producto eliminado 👌")
