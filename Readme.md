@@ -2,6 +2,7 @@
 
 Este proyecto es un ejemplo básico de un sistema de enrutamiento para aplicaciones de una sola página (SPA) en JavaScript vanilla.
 
+ Usamos module en los scripts cuando necesitamos importar y exportar 
 ## Temario: Lo que necesitas saber para implementar un router básico
 
 ### 1. Conceptos Básicos de SPA (Single Page Application)
